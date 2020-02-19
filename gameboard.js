@@ -138,20 +138,23 @@ class Gameboard {
             this.snake.snakeHead.position.y == this.food.food.position.y) {
             this.food.removeFood();
             this.snake.addSnakeBody();
+            this.constructNewFood(randomX, randomY);
+        }
+    };
 
-            for (let i = 0; i < this.snake.body.length; i++) {
-                if (this.snake.body[i].position.x != randomX &&
-                    this.snake.body[i].position.y != randomY) {
-                        this.food.food.position.x = randomX;
-                        this.food.food.position.y = randomY;
-                        this.food.constructFood();
-                }
-                if (this.snake.body[i].position.x == randomX &&
-                    this.snake.body[i].position.y == randomY) {
-                        this.food.food.position.x = this.generateRandomNumber(0, (this.size - 1));
-                        this.food.food.position.y = this.generateRandomNumber(0, (this.size - 1));
-                        this.food.constructFood();
-                }
+    constructNewFood = (randomX, randomY) => {
+        for (let i = 0; i < this.snake.body.length; i++) {
+            if (this.snake.body[i].position.x != randomX &&
+                this.snake.body[i].position.y != randomY) {
+                    this.food.food.position.x = randomX;
+                    this.food.food.position.y = randomY;
+                    this.food.constructFood();
+            }
+            if (this.snake.body[i].position.x == randomX &&
+                this.snake.body[i].position.y == randomY) {
+                    this.food.food.position.x = this.generateRandomNumber(0, (this.size - 1));
+                    this.food.food.position.y = this.generateRandomNumber(0, (this.size - 1));
+                    this.food.constructFood();
             }
         }
     };
