@@ -148,58 +148,11 @@ class Gameboard {
                 }
                 if (this.snake.body[i].position.x == randomX &&
                     this.snake.body[i].position.y == randomY) {
-                        console.log("HERE!");
                         this.food.food.position.x = this.generateRandomNumber(0, (this.size - 1));
                         this.food.food.position.y = this.generateRandomNumber(0, (this.size - 1));
                         this.food.constructFood();
                 }
             }
         }
-
-
-
-
-
-        // if (this.snake.snakeHead.position.x == this.food.food.position.x &&
-        //     this.snake.snakeHead.position.y == this.food.food.position.y) {
-
-        //     if (this.snake.snakeHead.position.x != randomX &&
-        //         this.snake.snakeHead.position.y != randomY) {
-        //         this.food.removeFood();
-        //         this.snake.addSnakeBody();
-        //         console.log("SnakeBody X", this.snake.snakeBody.position.x);
-        //         console.log("SnakeBody Y", this.snake.snakeBody.position.y);
-        //         console.log("Random X", randomX);
-        //         console.log("Random Y", randomY);
-
-        //         if (this.snake.snakeBody.position.x != randomX &&
-        //             this.snake.snakeBody.position.y != randomY) {
-
-        //             console.log(this.snake.body);
-        //             for (let i = 0; i < this.snake.body.length; i++) {
-        //                 console.log("HERE!");
-        //                 console.log(this.snake.body[i].position.x);
-        //                 console.log(this.snake.body[i].position.y);
-        //                 if (this.snake.body[i].position.x != randomX && this.snake.body[i].position.y != randomY) {
-        //                     this.food.food.position.x = randomX;
-        //                     this.food.food.position.y = randomY;
-        //                     this.food.constructFood();
-        //                 }
-        //             }
-
-        //             // this.food.food.position.x = randomX;
-        //             // this.food.food.position.y = randomY;
-        //             // this.food.constructFood();
-        //         }
-
-        //         // if (this.snake.snakeBody.position.x != randomX &&
-        //         //     this.snake.snakeBody.position.y != randomY) {
-        //         //     this.food.food.position.x = randomX;
-        //         //     this.food.food.position.y = randomY;
-        //         //     this.food.constructFood();
-        //         //     this.snake.addSnakeBody();
-        //         // }
-        //     }
-        // }
     };
 }
