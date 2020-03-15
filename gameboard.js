@@ -143,19 +143,25 @@ class Gameboard {
     };
 
     constructNewFood = (randomX, randomY) => {
+        let foodTrigger = false;
         for (let i = 0; i < this.snake.body.length; i++) {
-            if (this.snake.body[i].position.x != randomX &&
-                this.snake.body[i].position.y != randomY) {
-                    this.food.food.position.x = randomX;
-                    this.food.food.position.y = randomY;
-                    this.food.constructFood();
-            }
             if (this.snake.body[i].position.x == randomX &&
                 this.snake.body[i].position.y == randomY) {
-                    this.food.food.position.x = this.generateRandomNumber(0, (this.size - 1));
-                    this.food.food.position.y = this.generateRandomNumber(0, (this.size - 1));
-                    this.food.constructFood();
+                randomX = this.generateRandomNumber(0, (this.size - 1));
+                randomY = this.generateRandomNumber(0, (this.size - 1));
+                foodTrigger = true;
+                break;
             }
+        }
+
+        if (foodTrigger == true) {
+            this.constructNewFood(randomX, randomY);
+        }
+
+        else {
+            this.food.food.position.x = randomX;
+            this.food.food.position.y = randomY;
+            this.food.constructFood();
         }
     };
 }

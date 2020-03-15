@@ -84,12 +84,12 @@ class Snake {
         }
 
         for (let i = 1; i < this.body.length; i++) {
-            let temporaryPositionX = this.body[i].position.x;
-            let temporaryPositionY = this.body[i].position.y;
+            let lastBodyPositionX = this.body[i].position.x;
+            let lastBodyPositionY = this.body[i].position.y;
             this.body[i].position.x = lastHeadPositionX;
             this.body[i].position.y = lastHeadPositionY;
-            lastHeadPositionX = temporaryPositionX;
-            lastHeadPositionY = temporaryPositionY;
+            lastHeadPositionX = lastBodyPositionX;
+            lastHeadPositionY = lastBodyPositionY;
         }
     };
 
